@@ -19,6 +19,7 @@ const (
 type Request struct {
 	Comment             Comment          `json:"comment"`
 	RequestedAttributes map[string]Score `json:"requestedAttributes"`
+	Languages           []string         `json:"languages",omitempty"`
 	DoNotStore          bool             `json:"doNotStore,omitempty"`
 }
 
@@ -58,6 +59,7 @@ func (p *Perspective) ScoreComment(comment string) (float64, error) {
 		RequestedAttributes: map[string]Score{
 			modelToxicity: {},
 		},
+		Languages:  []string{"en"},
 		DoNotStore: true,
 	}
 
