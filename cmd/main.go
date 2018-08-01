@@ -64,7 +64,7 @@ func main() {
 
 				comment := ""
 				if len(words) == 2 {
-					if message, ok := lastMessages[line.Target()][line.Nick]; ok {
+					if message, ok := lastMessages[line.Target()][culprit]; ok {
 						comment = message
 					}
 				} else {
